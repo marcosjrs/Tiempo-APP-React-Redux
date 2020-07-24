@@ -5,7 +5,7 @@ export class Viento extends Component {
     render() {
         return (
             <div>
-                {this.props.viento}
+                Viento: {this.props.viento}
             </div>
         )
     }

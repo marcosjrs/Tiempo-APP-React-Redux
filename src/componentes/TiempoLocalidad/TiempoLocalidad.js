@@ -8,9 +8,7 @@ import Tiempo from './Tiempo/Tiempo';
 export class TiempoLocalidad extends Component {
     render() {
         return (
-            <div>
-                <Tiempo tiempo={this.props.tiempo}></Tiempo>
-            </div>
+            <Tiempo tiempo={this.props.tiempo}></Tiempo>
         )
     }
 }

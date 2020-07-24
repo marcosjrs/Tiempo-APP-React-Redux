@@ -1,20 +1,33 @@
 import React from 'react';
 import './App.css';
-import {TiempoLocalidad}  from './componentes/TiempoLocalidad/TiempoLocalidad';
+import { TiempoLocalidad } from './componentes/TiempoLocalidad/TiempoLocalidad';
 
 function App() {
 
-  const tiempoFake = {
-      ciudad:'Santiago de Compostela',
-      viento:'25m/s',
-      temperatura:'30º',
-      humedad:'5%'
-  }
+  const tiemposFake = [
+    {
+      id:1,
+      ciudad: 'Santiago de Compostela',
+      viento: '25m/s',
+      temperatura: '30º',
+      humedad: '15%'
+    },
+    {
+      id:2,
+      ciudad: 'A Coruña',
+      viento: '25m/s',
+      temperatura: '27º',
+      humedad: '23%'
+    }
+  ];
+
+  const getListTiempoCiudades = (tiempoCiudades) => tiempoCiudades.map(
+    (tiempo, indice) => <TiempoLocalidad key={tiempo.id} tiempo={tiempo}></TiempoLocalidad>
+  );
 
   return (
     <div className="App">
-      Aplicación del tiempo
-      <TiempoLocalidad tiempo={tiempoFake}></TiempoLocalidad>
+      {getListTiempoCiudades(tiemposFake)}
     </div>
   );
 }

@@ -5,7 +5,7 @@ export class Temperatura extends Component {
     render() {
         return (
             <div>
-                {this.props.temperatura}
+                Temperatura: {this.props.temperatura}
             </div>
         )
     }

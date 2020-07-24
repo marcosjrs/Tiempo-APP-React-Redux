@@ -5,7 +5,7 @@ export class Humedad extends Component {
     render() {
         return (
             <div>
-                {this.props.humedad}
+                Humedad: {this.props.humedad}
             </div>
         )
     }
