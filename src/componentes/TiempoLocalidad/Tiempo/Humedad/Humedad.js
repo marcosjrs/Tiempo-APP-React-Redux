@@ -5,10 +5,14 @@ export class Humedad extends Component {
     render() {
         return (
             <div>
-                Humedad
+                {this.props.humedad}
             </div>
         )
     }
+}
+
+Humedad.propTypes = {
+    humedad: PropTypes.string.isRequired
 }
 
 export default Humedad

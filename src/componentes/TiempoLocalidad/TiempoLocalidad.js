@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Localidad from './Localidad/Localidad';
 import Tiempo from './Tiempo/Tiempo';
 
 /**
@@ -10,11 +9,13 @@ export class TiempoLocalidad extends Component {
     render() {
         return (
             <div>
-                <Localidad></Localidad>
-                <Tiempo></Tiempo>
+                <Tiempo tiempo={this.props.tiempo}></Tiempo>
             </div>
         )
     }
 }
 
+TiempoLocalidad.propTypes = {
+    tiempo: PropTypes.object.isRequired
+}
 export default TiempoLocalidad

@@ -5,10 +5,14 @@ export class Temperatura extends Component {
     render() {
         return (
             <div>
-                Temperatura
+                {this.props.temperatura}
             </div>
         )
     }
+}
+
+Temperatura.propTypes = {
+    temperatura: PropTypes.string.isRequired
 }
 
 export default Temperatura

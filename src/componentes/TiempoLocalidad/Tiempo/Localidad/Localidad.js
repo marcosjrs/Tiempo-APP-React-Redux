@@ -5,10 +5,14 @@ export class Localidad extends Component {
     render() {
         return (
             <div>
-                Localidad
+                {this.props.localidad}
             </div>
         )
     }
+}
+
+Localidad.propTypes = {
+    localidad: PropTypes.string.isRequired
 }
 
 export default Localidad
