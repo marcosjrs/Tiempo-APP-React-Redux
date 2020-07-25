@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 export class Humedad extends Component {
     render() {
         return (
-            <div>
+            <span>
                 Humedad: {this.props.humedad}
-            </div>
+            </span>
         )
     }
 }

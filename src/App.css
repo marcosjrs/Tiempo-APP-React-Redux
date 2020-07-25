@@ -15,6 +15,19 @@
   box-shadow: 10px 10px 24px -6px rgba(0,0,0,0.75);
 }
 
+.App .card .card-text{
+  text-align: left;
+  padding-left: 55px;
+}
+
+.App .card .card-text i{
+  width: 18px;
+  display: inline-block;
+}
+.App .card .card-text i.fa-tint:before {
+  margin-left: 2px;
+}
+
 .App .card .card-title {
   margin-bottom: 0;
 }

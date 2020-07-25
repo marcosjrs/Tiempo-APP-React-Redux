@@ -4,11 +4,15 @@ import PropTypes from 'prop-types'
 export class Viento extends Component {
     render() {
         return (
-            <div>
+            <span>
                 Viento: {this.props.viento}
-            </div>
+            </span>
         )
     }
+}
+
+Viento.protoTypes = {
+    viento: PropTypes.string
 }
 
 export default Viento

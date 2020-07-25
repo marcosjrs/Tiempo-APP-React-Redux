@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 export class Temperatura extends Component {
     render() {
         return (
-            <div>
+            <span>
                 Temperatura: {this.props.temperatura}
-            </div>
+            </span>
         )
     }
 }
