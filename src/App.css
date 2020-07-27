@@ -7,7 +7,32 @@
   pointer-events: none;
 }
 
-.App .card {
+.App .container-tiempo-app{
+  margin: 20px;
+  padding: 20px;
+}
+
+.App .container-tiempo-app h3{  
+  margin-bottom: 22px;
+  color: grey;
+}
+
+.App .container-tiempo-app .container-tiempo-ciudades{
+  overflow-y: auto;
+  height: 100%;
+  
+  -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+} 
+
+.App .container-datos-principal, .App .container-datos-principal .row{
+  height: 100%;
+  height: 400px;
+}
+
+.App .container-tiempo-app .card {
+  width: 16rem;
   margin: 5px;
   float: left;
   -webkit-box-shadow: 10px 10px 24px -6px rgba(0,0,0,0.75);
@@ -15,19 +40,39 @@
   box-shadow: 10px 10px 24px -6px rgba(0,0,0,0.75);
 }
 
-.App .card .card-text{
+.App .container-tiempo-app .card .card-text{
   text-align: left;
-  padding-left: 55px;
+  padding-left: 33px;
 }
 
-.App .card .card-text i{
+.App .container-tiempo-app .card .card-text i{
   width: 18px;
   display: inline-block;
 }
-.App .card .card-text i.fa-tint:before {
+.App .container-tiempo-app .card .card-text i.fa-tint:before {
   margin-left: 2px;
 }
 
-.App .card .card-title {
+.App .container-tiempo-app .card .card-title {
   margin-bottom: 0;
+}
+
+.App .container-informacion-extendida h4 {
+  margin-bottom: 12px;
+}
+
+.App .container-informacion-extendida .caracteristica {
+  color: grey;
+  font-weight: bold;
+}
+
+
+
+@media (max-width: 575px) {
+  .container-informacion-extendida {
+      margin-top: 32px!important;
+  }
+  .App .container-tiempo-app{
+    border: 0;
+  }
 }

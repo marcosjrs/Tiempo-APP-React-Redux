@@ -12,10 +12,15 @@ export class Tiempo extends Component {
         this.props.actualizarDatosCiudad(this.props.tiempo.id, this.props.tiempo.ciudad);
     }
 
+    masInfo = (e) => {
+        e.preventDefault()
+        this.props.masInfoCiudad(this.props.tiempo.id, this.props.tiempo.ciudad);
+    }
+
     render() {
         const { ciudad, temperatura, humedad, viento } = this.props.tiempo;
         return (
-            <div className="card" style={{ width: 18 + 'rem' }}>
+            <div className="card">
                 <div className="card-header">
                     <h5 className="card-title"><i className='fas fa-city'></i><Localidad localidad={ciudad}></Localidad></h5>
                 </div>
@@ -25,7 +30,8 @@ export class Tiempo extends Component {
                     <div className="card-text"><i className='fas fa-wind'></i> <Viento viento={viento}></Viento></div>
                 </div>
                 <div className="card-footer">
-                    <a href="false" className="card-link" onClick={this.actualizar} ><i className="fas fa-sync"></i> Actualizar</a>
+                    <a href="false" className="card-link" onClick={this.actualizar}  ><i className="fas fa-sync"></i> Actualizar</a>
+                    <a href="false" className="card-link" onClick={this.masInfo}  ><i className="fas fa-eye"></i> Más info</a>
                 </div>
             </div>
         )

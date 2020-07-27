@@ -1,8 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Tiempo APP
 
-## Available Scripts
+Este proyecto fue creado inicialmente con  [Create React App](https://github.com/facebook/create-react-app) y hace uso de bootstrap 4 y de servicios de openweathermap, entre otros.
+Es un proyecto para practicar/recordar el uso de React, por tanto es un proyecto bastante simple. La idea fue sacada de un curso de esta libreria ("React JS + Redux + ES6. Completo ¡De 0 a experto!"), pero me desmarqué desde casi los inicios (si sigues el curso verás que apenas tiene que ver el código).
 
-In the project directory, you can run:
+
+Dentro del directorio del proyecto, podemos realizar:
 
 ### `npm start`
 
