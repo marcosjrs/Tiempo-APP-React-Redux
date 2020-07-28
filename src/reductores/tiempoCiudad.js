@@ -33,3 +33,6 @@ export const tiempoCiudad = (estado, accion) => {
     }
     return estado;
 }
+
+export const getDatosCiudadesDelEstado = (state) => state.datos;
+export const getMasInformacionCiudadSeleccionadaDelEstado = (state) => state.seleccionada;

@@ -5,6 +5,7 @@ import { obtenerDatosTiempo, transformaDatos } from '../servicios/Tiempo.Servici
 
 import { connect } from 'react-redux';
 import { addDatosCiudad, modificarDatosCiudad, actualizarDatosCiudad, establecerInfoCiudad, peticionForecast, peticionForecastParaMasInfo, peticionForecastParaAnadir, peticionForecastParaActualizar } from '../acciones';
+import { getDatosCiudadesDelEstado, getDatosCiudadesDelEstado } from '../reductores/tiempoCiudad';
 
 /**
  * Componente que mostrará las tarjetas de informaciones por cada localidad
@@ -76,9 +77,12 @@ export class TiempoLocalidadesContainer extends Component {
 }
 
 function mapStateToProps(state) {
-    const { datos, seleccionada } = state
-    return { datos, seleccionada }
-  }
+    return { 
+        datos: getDatosCiudadesDelEstado(state), 
+        seleccionada: getMasInformacionCiudadSeleccionadaDelEstado(state) 
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         addDatosCiudad: (ciudad) => dispatch(addDatosCiudad(ciudad)),
