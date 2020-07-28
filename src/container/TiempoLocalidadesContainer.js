@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Tiempo from '../componentes/TiempoLocalidades/Tiempo/Tiempo';
 import InformacionExtendida from '../componentes/TiempoLocalidades/Tiempo/InformacionExtendida/InformacionExtendida';
-import { obtenerDatosTiempo, transformaDatos } from '../servicios/Tiempo.Servicio';
 
 import { connect } from 'react-redux';
-import { addDatosCiudad, modificarDatosCiudad, actualizarDatosCiudad, establecerInfoCiudad, peticionForecast, peticionForecastParaMasInfo, peticionForecastParaAnadir, peticionForecastParaActualizar } from '../acciones';
-import { getDatosCiudadesDelEstado, getDatosCiudadesDelEstado } from '../reductores/tiempoCiudad';
+import { addDatosCiudad, modificarDatosCiudad, establecerInfoCiudad, peticionForecastParaMasInfo, peticionForecastParaAnadir, peticionForecastParaActualizar } from '../acciones';
+import { getDatosCiudadesDelEstado, getMasInformacionCiudadSeleccionadaDelEstado } from '../reductores/tiempoCiudad';
 
 /**
  * Componente que mostrará las tarjetas de informaciones por cada localidad

@@ -5,9 +5,6 @@ import Temperatura from './Temperatura/Temperatura';
 import Viento from './Viento/Viento';
 import Localidad from './Localidad/Localidad';
 
-import {connect} from 'react-redux'; 
-import {actualizarDatosCiudad, establecerInfoCiudad} from '../../../acciones';
-
 export class Tiempo extends Component {
 
     actualizar = (e) => {

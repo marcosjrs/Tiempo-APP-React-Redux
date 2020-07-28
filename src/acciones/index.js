@@ -1,4 +1,4 @@
-import { obtenerDatosTiempo, transformaDatos, obtenerDatosTiempoPorId } from '../servicios/Tiempo.Servicio';
+import { obtenerDatosTiempo, transformaDatos } from '../servicios/Tiempo.Servicio';
 //CON DATOS...
 export const ADD_DATOS_CIUDAD = 'ADD_DATOS_CIUDAD';
 export const MODIFICAR_DATOS_CIUDAD = 'MODIFICAR_DATOS_CIUDAD';
