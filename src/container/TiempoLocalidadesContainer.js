@@ -4,7 +4,7 @@ import InformacionExtendida from '../componentes/TiempoLocalidades/Tiempo/Inform
 import { obtenerDatosTiempo, transformaDatos } from '../servicios/Tiempo.Servicio';
 
 import { connect } from 'react-redux';
-import { addDatosCiudad, modificarDatosCiudad, actualizarDatosCiudad, establecerInfoCiudad } from '../acciones';
+import { addDatosCiudad, modificarDatosCiudad, actualizarDatosCiudad, establecerInfoCiudad, peticionForecast, peticionForecastParaMasInfo, peticionForecastParaAnadir, peticionForecastParaActualizar } from '../acciones';
 
 /**
  * Componente que mostrará las tarjetas de informaciones por cada localidad
@@ -22,20 +22,11 @@ export class TiempoLocalidadesContainer extends Component {
     }
 
     actualizarDatosCiudad = (id, ciudad) => {
-        obtenerDatosTiempo(ciudad)
-            .then(datos => this.actualizarEstadoCiudad(id, transformaDatos(datos)))
-            .catch(error => console.log("Erro al llamar al servicio del tiempo."));
-        console.log("Actualizar: ", id)
+        this.props.actualizarDatosCiudad(id, ciudad);
     }
 
     masInfoCiudad = (id, ciudad) => {
-        //Lo siguiente no debería estar aquí... 
-        obtenerDatosTiempo(ciudad)
-            .then(datos => {
-                this.actualizarEstadoCiudad(id, transformaDatos(datos));
-                this.actualizarMasInfo(transformaDatos(datos));
-            })
-            .catch(error => console.log("Erro al llamar al servicio del tiempo."));
+        this.props.actualizarMasInfoCiudad(ciudad);
     }
 
     getListTiempoCiudades = (tiempoCiudades) => tiempoCiudades.map(
@@ -55,11 +46,10 @@ export class TiempoLocalidadesContainer extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
-        obtenerDatosTiempo("A Coruña,es").then(datos => this.addEstadoCiudades(transformaDatos(datos)));
-        obtenerDatosTiempo("Madrid").then(datos => this.addEstadoCiudades(transformaDatos(datos)));
-        obtenerDatosTiempo("Paris").then(datos => this.addEstadoCiudades(transformaDatos(datos)));
-        obtenerDatosTiempo("Lisbon").then(datos => this.addEstadoCiudades(transformaDatos(datos)));
+        this.props.obtenerDatosCiudad("A Coruña,es");
+        this.props.obtenerDatosCiudad("Madrid");
+        this.props.obtenerDatosCiudad("Paris");
+        this.props.obtenerDatosCiudad("Lisbon");
     }
 
     render() {
@@ -94,7 +84,10 @@ const mapDispatchToProps = dispatch => {
         addDatosCiudad: (ciudad) => dispatch(addDatosCiudad(ciudad)),
         modificarDatosCiudad: (id, ciudad) => dispatch(modificarDatosCiudad(id, ciudad)),
 
-        actualizarDatosCiudad: (id, ciudad) => dispatch(actualizarDatosCiudad(id, ciudad)),
+        actualizarDatosCiudad: (id, ciudad) => dispatch(peticionForecastParaActualizar(ciudad,id)),
+        obtenerDatosCiudad: (ciudad) => dispatch(peticionForecastParaAnadir(ciudad)),
+        actualizarMasInfoCiudad: (ciudad) => dispatch(peticionForecastParaMasInfo(ciudad)),
+
         establecerInfoCiudad: (id, ciudad) => dispatch(establecerInfoCiudad(id, ciudad)),
     }
 }

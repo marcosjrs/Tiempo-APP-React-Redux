@@ -1,3 +1,4 @@
+import { obtenerDatosTiempo, transformaDatos, obtenerDatosTiempoPorId } from '../servicios/Tiempo.Servicio';
 //CON DATOS...
 export const ADD_DATOS_CIUDAD = 'ADD_DATOS_CIUDAD';
 export const MODIFICAR_DATOS_CIUDAD = 'MODIFICAR_DATOS_CIUDAD';
@@ -33,5 +34,41 @@ export const actualizarDatosCiudad = (id, nombreCiudad)=>{
         type: OBTENER_DATOS_CIUDAD,
         id,
         nombreCiudad
+    };
+}
+
+export const peticionForecastParaAnadir = (ciudad) =>{
+    return dispatch => {
+        obtenerDatosTiempo(ciudad)
+        .then(
+            datos => {
+                dispatch(addDatosCiudad(transformaDatos(datos)));
+            }
+        )
+        .catch(error => console.log("Erro al llamar al servicio del tiempo."));
+    };
+}
+
+export const peticionForecastParaActualizar = (ciudad,id) =>{
+    return dispatch => {
+        obtenerDatosTiempo(ciudad)
+        .then(
+            datos => {
+                dispatch(modificarDatosCiudad(datos.id, transformaDatos(datos)));
+            }
+        )
+        .catch(error => console.log("Erro al llamar al servicio del tiempo."));
+    };
+}
+
+export const peticionForecastParaMasInfo = (ciudad) =>{
+    return dispatch => {
+        obtenerDatosTiempo(ciudad)
+        .then(
+            datos => {
+                 dispatch(establecerInfoCiudad(transformaDatos(datos)));
+            }
+        )
+        .catch(error => console.log("Erro al llamar al servicio del tiempo."));
     };
 }

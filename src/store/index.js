@@ -1,5 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 import { tiempoCiudad } from '../reductores/tiempoCiudad';
+
+const composeEnhacers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const estadoInicial = {
     datos: [],
@@ -9,5 +12,5 @@ const estadoInicial = {
 export const store = createStore(
     tiempoCiudad,
     estadoInicial,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    composeEnhacers(applyMiddleware(thunk))
 );
