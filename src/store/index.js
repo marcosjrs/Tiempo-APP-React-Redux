@@ -14,7 +14,6 @@ const reducer = (estado = estadoInicial, accion) => {
             break;
         case MODIFICAR_DATOS_CIUDAD:
             let modificado = { ...estado };
-            console.log(accion)
             modificado.datos = modificado.datos.map(
                 (dato) => {
                     if (dato.id === accion.tiempoCiudad.id) {
@@ -31,7 +30,7 @@ const reducer = (estado = estadoInicial, accion) => {
             estado = conInfoModificada;
             break;
         case OBTENER_DATOS_CIUDAD:
-            console.log(estado, accion); //pedir a servicio web...
+            //pedir a servicio web...
             break;
         default:
             console.log(estado, accion);
