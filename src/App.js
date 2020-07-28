@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import TiempoLocalidades from './componentes/TiempoLocalidades/TiempoLocalidades';
+import TiempoLocalidadesContainer from './container/TiempoLocalidadesContainer';
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      <TiempoLocalidades></TiempoLocalidades>
+      <TiempoLocalidadesContainer></TiempoLocalidadesContainer>
     </div>
   );
 }

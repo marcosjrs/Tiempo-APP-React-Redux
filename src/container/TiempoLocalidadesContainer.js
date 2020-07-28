@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Tiempo from './Tiempo/Tiempo';
-import InformacionExtendida from './Tiempo/InformacionExtendida/InformacionExtendida';
-import { obtenerDatosTiempo, transformaDatos } from '../../servicios/Tiempo.Servicio';
+import Tiempo from '../componentes/TiempoLocalidades/Tiempo/Tiempo';
+import InformacionExtendida from '../componentes/TiempoLocalidades/Tiempo/InformacionExtendida/InformacionExtendida';
+import { obtenerDatosTiempo, transformaDatos } from '../servicios/Tiempo.Servicio';
 
 import { connect } from 'react-redux';
-import { addDatosCiudad, modificarDatosCiudad, actualizarDatosCiudad, establecerInfoCiudad } from '../../acciones';
+import { addDatosCiudad, modificarDatosCiudad, actualizarDatosCiudad, establecerInfoCiudad } from '../acciones';
 
 /**
  * Componente que mostrará las tarjetas de informaciones por cada localidad
  */
-export class TiempoLocalidades extends Component {
+export class TiempoLocalidadesContainer extends Component {
 
     tiempoCiudades = {
         datos: [],
@@ -98,4 +98,4 @@ const mapDispatchToProps = dispatch => {
         establecerInfoCiudad: (id, ciudad) => dispatch(establecerInfoCiudad(id, ciudad)),
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(TiempoLocalidades);
+export default connect(mapStateToProps, mapDispatchToProps)(TiempoLocalidadesContainer);
