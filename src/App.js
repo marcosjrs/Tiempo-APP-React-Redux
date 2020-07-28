@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import { TiempoLocalidades } from './componentes/TiempoLocalidades/TiempoLocalidades';
+import TiempoLocalidades from './componentes/TiempoLocalidades/TiempoLocalidades';
+
 
 function App() {
 
